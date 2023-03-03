@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 151e1c9d94d1fc741877028f11c27d84, type: 3}
   m_Name: Ball
   m_EditorClassIdentifier: 
-  StartVelocity: {x: 6, y: 6}
+  StartVelocity: {x: 4, y: 4}
   PowerUpChance: 0.2

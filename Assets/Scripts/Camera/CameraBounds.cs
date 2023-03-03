@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class CameraBounds : MonoBehaviour
 {
+    // Public Variables //
+    public GameObject Bounds1;
+    public GameObject Bounds2;
+
+
     // Private Variables //
     private float _Width, _Height;
     private Camera _Camera;
@@ -45,6 +50,9 @@ public class CameraBounds : MonoBehaviour
         Vector2 point4 = new Vector2(-_Width / 2, _Height / 2);
         
         tempArray = new Vector2[] { point3, point4, point1, point2 };
+
+        Bounds1.transform.position = point4;
+        Bounds2.transform.position = point1;
 
         return tempArray;
     }

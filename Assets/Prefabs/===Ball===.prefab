@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BallInfo: {fileID: 11400000, guid: 72605b3d50e6aab41869888c83c6e68f, type: 2}
+  PowerUp: {fileID: 614821502107410663, guid: a510f25c1094b0e478e33c94d29b8c49, type: 3}
   Levels: []
 --- !u!58 &6987093545224712070
 CircleCollider2D:
