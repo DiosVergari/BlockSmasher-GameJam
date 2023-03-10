@@ -19,27 +19,21 @@ public class PowerUp : MonoBehaviour
         _Sp = GetComponent<SpriteRenderer>();
         _Power = PowerUpInfo.PowerUpObject[rand].GetComponent<IPowerUp>();
         _Sp.sprite = PowerUpInfo.PowerUpSprites[rand];
-
-
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
-        {
-            _Power.GivePowerUp();
-            AudioManager.Instance.GoodSFX();
-            Destroy(gameObject);
-        }
-
+            PlayerCollision();
 
         if (collision.gameObject.tag == "GameOver")
-        {
             Destroy(gameObject);
-        }
+    }
+
+    private void PlayerCollision()
+    {
+        _Power.GivePowerUp();
+        AudioManager.Instance.GoodSFX();
+        Destroy(gameObject);
     }
 }

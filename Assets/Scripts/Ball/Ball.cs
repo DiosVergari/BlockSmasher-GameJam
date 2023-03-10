@@ -10,11 +10,12 @@ public class Ball : MonoBehaviour
     public GameObject PowerUp;
 
     // Private Variables //
-    private Vector3 _InitialPos;
     private Points _PlayerPoints;
     private Lives   _PlayerLives;
     private Levels _PlayerLevels;
     private Rigidbody2D _RigidBody2D;
+    private Vector3 _InitialPos;
+
 
 
     void Start()
@@ -40,34 +41,6 @@ public class Ball : MonoBehaviour
         _RigidBody2D.AddForce(start, ForceMode2D.Impulse);
     }
     #endregion
-
-    void Update()
-    {
-        if (_RigidBody2D.velocity.x > 8)
-            _RigidBody2D.velocity = new Vector2(8, _RigidBody2D.velocity.y);
-
-        if (_RigidBody2D.velocity.y > 8)
-            _RigidBody2D.velocity = new Vector2(_RigidBody2D.velocity.x, 8);
-
-
-
-        RaycastHit2D hit = Physics2D.Raycast(_RigidBody2D.position, _RigidBody2D.velocity.normalized, 0.5f);
-    
-        switch(hit.collider.gameObject.tag)
-        {
-            case "MainCamera":
-                Debug.Log("a");
-                Bounce(hit);
-                break;
-            case "GameOver":
-                Debug.Log("b");
-                Died();
-                break;
-            default:
-                break;
-        }
-
-    }
 
     #region Collision
     private void OnCollisionEnter2D(Collision2D collision)
@@ -134,12 +107,6 @@ public class Ball : MonoBehaviour
 
         Instantiate(PowerUp, gameCol.position, Quaternion.identity);
          
-    }
-
-    private void Bounce(RaycastHit2D hit)
-    {
-        Vector2 newDirection = new Vector2(hit.normal.x + _RigidBody2D.velocity.x, hit.normal.y + _RigidBody2D.velocity.y);
-        _RigidBody2D.velocity = newDirection;
     }
 
     private void Died()

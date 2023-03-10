@@ -6,7 +6,7 @@ using UnityEngine;
 public class Points : MonoBehaviour
 {
     // Private Variables //
-    private int _Points = 0;
+    private sbyte _Points = 0;
     private TextMeshProUGUI _ScoreTXT;
 
     void Awake()
@@ -16,7 +16,7 @@ public class Points : MonoBehaviour
         _ScoreTXT.text = "Points: " + _Points.ToString();
     }
 
-    public void AddPoints(int value)
+    public void AddPoints(sbyte value)
     {
         _Points += value;
         _ScoreTXT.text = "Points: " + _Points.ToString();

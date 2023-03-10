@@ -6,8 +6,8 @@ using UnityEngine;
 public class Lives : MonoBehaviour
 {
     // Private Variables //
-    private int _Lives = 0;
     private TextMeshProUGUI _LivesTXT;
+    private sbyte _Lives = 0;
 
     // Start is called before the first frame update
     void Start()

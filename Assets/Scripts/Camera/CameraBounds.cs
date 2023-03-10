@@ -10,10 +10,9 @@ public class CameraBounds : MonoBehaviour
 
 
     // Private Variables //
-    private float _Width, _Height;
     private Camera _Camera;
     private EdgeCollider2D _CameraEdgeCollider;
-    
+    private float _Width, _Height;
 
     // Start is called before the first frame update
     void Awake()
